@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Banco Wolf</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos_dashboard.css') }}">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Banco Wolf</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('empleado.dashboard') }}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ url_for('empleado.clientes') }}">Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/auth/logout">Cerrar Sesión</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="list-group">
+                    <a href="{{ url_for('empleado.dashboard') }}" class="list-group-item list-group-item-action">Dashboard</a>
+                    <a href="{{ url_for('empleado.clientes') }}" class="list-group-item list-group-item-action active">Clientes</a>
+                    <a href="#card_reportes" class="list-group-item list-group-item-action">Reportes</a>
+                    <a href="/auth/logout" class="list-group-item list-group-item-action">Cerrar Sesion</a>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="row">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Email</th>
+                                <th>Número de Cuenta</th>
+                                <th>Saldo Cuenta</th>
+                                <th>Tarjetas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for cliente in clientes %}
+                            <tr>
+                                <td>{{ cliente.nombre }}</td>
+                                <td>{{ cliente.email }}</td>
+                                <td>{{ cliente.numero_cuenta }}</td>
+                                <td>{{ cliente.saldo }}</td>
+                                <td>
+                                    {% if cliente.numero_tarjeta %}
+                                        <ul>
+                                            <li>Tarjeta: {{ cliente.numero_tarjeta }}</li>
+                                            <li>Tipo: {{ cliente.tipo_tarjeta }}</li>
+                                            <li>Límite de Crédito: {{ cliente.limite_credito }}</li>
+                                            <li>Saldo Disponible: {{ cliente.saldo_disponible }}</li>
+                                        </ul>
+                                    {% else %}
+                                        <p>No tiene tarjetas asociadas</p>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Reporte de transacciones -->
+        <div class="card" id="card_reportes">
+            <div class="card-header">
+                <h5>Reporte de Transacciones</h5>
+            </div>
+            <div class="card-body">
+                <form>
+                    <label for="fechaInicio">Fecha de Inicio</label>
+                    <input type="date" class="form-control" id="fechaInicio">
+                    
+                    <label for="fechaFin">Fecha de Fin</label>
+                    <input type="date" class="form-control" id="fechaFin">
+                    
+                    <button type="submit" class="btn btn-primary mt-2">Generar Reporte</button>
+                </form>
+
+                <table class="table mt-4">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Cliente</th>
+                            <th>Tipo de Transacción</th>
+                            <th>Monto</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Los datos de las transacciones serán generados dinámicamente -->
+                        {% for transaccion in transacciones %}
+                        <tr>
+                            <td>{{ transaccion.fecha }}</td>
+                            <td>{{ transaccion.cliente }}</td>
+                            <td>{{ transaccion.tipo }}</td>
+                            <td>{{ transaccion.monto }}</td>
+                            <td>{{ transaccion.estado }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Banco Wolf. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

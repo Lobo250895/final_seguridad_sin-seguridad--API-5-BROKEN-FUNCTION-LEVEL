@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco Wolf</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Banco Wolf</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="/auth/login">Iniciar sesión</a></li>
+                <li><a href="/auth/register">Registrarse</a></li>
+                <li><a href="#">Contáctenos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="welcome">
+        <h2>Bienvenido a Banco Wolf</h2>
+        <p>Tu seguridad y confianza son nuestra prioridad. Accede a tus cuentas y realiza transacciones de forma rápida y segura.</p>
+    </section>
+
+    <section class="options">
+        <div class="option">
+            <h3>Acceder a tu cuenta</h3>
+            <p>Ingresa para ver tu saldo, historial y realizar transacciones.</p>
+            <a href="/auth/login" class="btn">Iniciar sesión</a>
+        </div>
+        <div class="option">
+            <h3>Registrar una nueva cuenta</h3>
+            <p>Abre una nueva cuenta bancaria y empieza a disfrutar de nuestros servicios.</p>
+            <a href="/auth/register" class="btn">Crear cuenta</a>
+        </div>
+        <div class="option">
+            <h3>Servicios bancarios</h3>
+            <p>Conoce nuestros productos, desde ahorros hasta créditos.</p>
+            <a href="#" class="btn">Ver servicios</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Banco Wolf. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

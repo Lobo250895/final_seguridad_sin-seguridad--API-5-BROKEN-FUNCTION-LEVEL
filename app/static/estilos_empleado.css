@@ -1,0 +1,620 @@
+/* Reset de márgenes y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo de la página */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    /*background: url('/static/DALL·E 2024-12-06 14.19.48.webp') no-repeat center center/cover;*/
+    background-size: contain;  
+    position: relative;
+    min-height: 100vh;
+}
+
+h1{
+    text-align: center;
+    
+
+}
+
+.img {
+    display: flex;           
+    justify-content: center; 
+    align-items: center;
+    gap: 10px;          
+          
+}
+
+.img img {
+    width: 100px;
+    height: 100px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'PT Serif', serif;
+}
+
+p {
+    font-family: 'PT Serif', serif;
+    font-weight: 400; 
+}
+
+strong {
+    font-family: 'PT Serif', serif;
+    font-weight: 700; 
+}
+
+
+/* Barra de navegación */
+header {
+    background-color: #2C3E50;
+    color: white;
+    padding: 1rem 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Estilo de la sección de bienvenida */
+.welcome {
+    text-align: center;
+    padding: 3rem 20px;
+    background-color: #ECF0F1;
+}
+
+.welcome h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.welcome p {
+    font-size: 1.2rem;
+    color: #7F8C8D;
+}
+
+/* Estilo de las opciones principales */
+.options {
+    display: flex;
+    justify-content: space-around;
+    padding: 3rem 20px;
+}
+
+.option {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 30%;
+}
+
+.option h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.option p {
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2C3E50;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #34495E;
+}
+
+
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+}
+
+.login-box {
+    width: 300px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.input-box {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-btn button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-btn button:hover {
+    background-color: #2980b9;
+}
+
+
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+}
+
+.register-box {
+    width: 300px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.input-box {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-btn button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-btn button:hover {
+    background-color: #2980b9;
+}
+
+
+
+
+/* Pie de página */
+footer {
+    text-align: center;
+    background-color: #2C3E50;
+    color: white;
+    padding: 1rem;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 10px 0;
+    cursor: pointer;
+    color: #0073aa;
+}
+
+.main-content {
+    width: 80%;
+    padding: 20px;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+form {
+    max-width: 600px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+button {
+    background-color: #0073aa;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005a87;
+}
+
+/* General styles for cards */
+/* Estilos generales para las tarjetas */
+
+.container {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px; 
+    justify-content: center; 
+    margin: 20px auto; 
+    padding: 0 10px; 
+}
+
+.card {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin: 0; 
+    padding: 10px; 
+    flex: 1 1 calc(33.333% - 10px); 
+    max-width: calc(33.333% - 10px); 
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+.card_baner {
+    background-color: #f8f9fa;
+    border-radius: 8px; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+    margin: 20px auto; 
+    max-width: 600px; 
+    height: 200px; 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    text-align: center; 
+}
+
+.card_baner h2 {
+    font-size: 32px; 
+    color: #007bff; 
+    font-weight: bold;
+}
+
+.card_baner p {
+    font-size: 18px; 
+    color: #555; 
+}
+
+.card_baner img {
+    max-height: 150px; 
+    object-fit: cover; 
+    margin-right: 20px; 
+}
+
+/* Opcional: efectos de hover */
+.card_baner:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+    transform: scale(1.03); 
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* Cabecera de las tarjetas */
+.card-header {
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    padding: 8px;
+    text-transform: uppercase;
+}
+
+.card-body {
+    padding: 15px; 
+    background-color: #f9f9f9;
+}
+
+.card-item {
+    border: 1px solid #ddd;
+    border-radius: 6px; 
+    padding: 8px; 
+    margin-bottom: 8px; 
+    background: linear-gradient(135deg, #198754, #f1f1f1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 160px; 
+}
+
+.card-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.card-item h4 {
+    font-size: 14px; 
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.card-item p {
+    font-size: 12px; 
+    margin: 2px 0;
+    color: #555;
+}
+
+.card-item p strong {
+    color: #000;
+}
+
+/* Chip y logo de la tarjeta */
+.card-chip {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.card-chip .chip {
+    width: 36px; 
+    height: 24px; 
+    background: linear-gradient(45deg, #c6c6c6, #e0e0e0);
+    border-radius: 4px;
+    border: 1px solid #aaa;
+}
+
+/* Botón de visibilidad (ojo) */
+#toggle-visibility {
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#toggle-visibility i {
+    font-size: 1rem;
+    color: #555;
+}
+
+#toggle-visibility:hover i {
+    color: #198754;
+}
+
+/* Estilo del botón colapsable */
+.card-header button {
+    width: 100%;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: #198754;
+}
+
+.card-header button:hover {
+    color: #155d40;
+}
+
+.card-body {
+    padding: 12px;
+    border-top: 1px solid #ddd;
+}
+
+
+.card-header button i {
+    margin-left: 10px;
+    transition: transform 0.3s ease; 
+}
+
+.card-header button.collapsed i {
+    transform: rotate(180deg); 
+}
+
+.imagen img {
+    width: 80px; 
+    height: 80px; 
+    margin-left: 20px; 
+}
+
+.card-body.account-info {
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+
+.dashboard {
+    display: flex;
+    height: 100vh;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #198754;
+    color: white;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.logout-btn {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dashboard-sidebar {
+    width: 200px;
+    background-color: #343a40;
+    color: white;
+    padding-top: 70px;
+    position: fixed;
+    height: 100%;
+}
+
+.dashboard-sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.dashboard-sidebar nav ul li {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.dashboard-sidebar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.dashboard-content {
+    margin-left: 200px;
+    margin-top: 70px;
+    padding: 20px;
+    flex: 1;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.stats {
+    display: flex;
+    gap: 20px;
+}
+
+.stat-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1;
+}
+
+.stat-card h3 {
+    margin: 0 0 10px;
+}
+
+.clientes-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background: white;
+}
+
+.clientes-table th, .clientes-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.clientes-table th {
+    background: #198754;
+    color: white;
+}

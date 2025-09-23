@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Cliente</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Banco Wolf</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Clientes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/auth/logout">Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="list-group">
+                    <a href="{{ url_for('administrador.dashboard') }}" class="list-group-item list-group-item-action active">Inicio</a>
+                    <a href="{{ url_for('administrador.clientes') }}" class="list-group-item list-group-item-action">Clientes</a>
+                    <a href="{{ url_for('administrador.empleados') }}" class="list-group-item list-group-item-action">Empleados</a>
+                    <a href="/auth/logout" class="list-group-item list-group-item-action">Cerrar sesión</a>
+                </div>
+                <div class="col-md-9 d-flex justify-content-center align-items-center">
+                    <div class="imagen">
+                        <img src="{{ url_for('static', filename='lobo.png') }}" alt="Lobo" width="200" height="200" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <h2 class="mb-4">Actualizar permisos</h2>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        <div class="alert alert-info">
+                            <ul class="mb-0">
+                            {% for category, message in messages %}
+                                <li class="{{ category }}">{{ message }}</li>
+                            {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
+                {% endwith %}
+                <form method="POST" action="{{ url_for('administrador.editar_permisos', id_usuario=id_usuario) }}">
+                    <div class="form-group">
+                        <label for="permisos">Selecciona los permisos para el usuario:</label>
+                        <div>
+                            {% for permiso in todos_permisos %}
+                                <div class="form-check">
+                                    <input type="checkbox" 
+                                        name="permisos" 
+                                        value="{{ permiso.id_permiso }}" 
+                                        id="permiso_{{ permiso.id_permiso }}"
+                                        {% if permiso.id_permiso in permisos_usuario_set %}checked{% endif %}>
+                                    <label class="form-check-label" for="permiso_{{ permiso.id_permiso }}">
+                                        {{ permiso.nombre_permiso }}
+                                    </label>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                
+                    <button type="submit" class="btn btn-primary">Actualizar Permisos</button>
+                </form>
+                <a href="{{ url_for('administrador.clientes') }}" class="btn btn-secondary mt-3">Volver a la lista de clientes</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <footer class="bg-dark text-white text-center py-3 mt-4">
+        <p>&copy; 2024 Banco Wolf. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

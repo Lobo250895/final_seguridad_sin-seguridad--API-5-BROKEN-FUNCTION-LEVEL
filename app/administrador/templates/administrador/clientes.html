@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco Wolf</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+</head>
+<body>
+    <style>
+        main {
+            padding: 20px;
+        }
+        .dataTables_wrapper .dataTables_filter {
+            float: right;
+        }
+        .dataTables_wrapper .dataTables_paginate {
+            float: right;
+        }
+        .btn-sm {
+            margin-right: 5px;
+        }
+        .img {
+            display: flex;           
+            justify-content: center; 
+            align-items: center;
+            gap: 10px;               
+        }
+        .img img {
+            width: 130px;
+            height: 130px;
+            margin-top: -200px;
+        }
+    </style>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Banco Wolf</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link " href="{{ url_for('administrador.dashboard') }}">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{{ url_for('administrador.clientes') }}">Clientes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/auth/logout">Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-4">
+        <div class="row"></div>
+            <div class="col-md-3">
+                <div class="list-group">
+                    <a href="{{ url_for('administrador.dashboard') }}" class="list-group-item list-group-item-action ">Inicio</a>
+                    <a href="{{ url_for('administrador.clientes') }}" class="list-group-item list-group-item-action active">Clientes</a>
+                    <a href="{{ url_for('administrador.empleados') }}" class="list-group-item list-group-item-action">Empleados</a>
+                    <a href="/auth/logout" class="list-group-item list-group-item-action">Cerrar sesión</a>
+                </div>
+                
+            </div>
+            <div class="img" style="font-size: larger;">
+                <img src="{{ url_for('static', filename='lobo.png') }}" alt="" srcset="" width="100px" height="100px">
+            </div>
+
+            <h2 class="mb-4 text-center">Gestión de Clientes</h2>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Cuenta Bancaria</th>
+                            <th>Saldo</th>
+                            <th>Rol</th>
+                            <th>Permisos</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for cliente in clientes %}
+                            <tr>
+                                <td>{{ cliente.id_usuario }}</td>
+                                <td>{{ cliente.nombre }}</td>
+                                <td>{{ cliente.email }}</td>
+                                <td>{{ cliente.numero_cuenta or 'No posee cuenta bancaria' }}</td>
+                                <td>
+                                    {% if cliente.saldo %}
+                                        ${{ "%.2f"|format(cliente.saldo) }}
+                                    {% else %}
+                                        No posee saldo en la cuenta
+                                    {% endif %}
+                                </td>
+                                
+                                <td>
+                                    {% for rol in roles_clientes if rol.id_usuario == cliente.id_usuario %}
+                                        {{ rol.nombre_rol }}
+                                    {% endfor %}
+                                </td>
+                                <td>
+                                    {% for permiso in permisos_clientes if permiso.id_usuario == cliente.id_usuario %}
+                                        {{ permiso.nombre_permiso }}<br>
+                                    {% endfor %}
+                                </td>
+                                <td>
+                                    <div class="d-grid gap-2" style="grid-template-columns: repeat(2, 1fr); width: 200px;">
+                                        <a href="{{ url_for('administrador.editar_cliente', id_usuario=cliente['id_usuario']) }}" class="btn btn-warning btn-sm">
+                                            Editar
+                                        </a>
+                                        <form method="POST" action="{{ url_for('administrador.eliminar_cliente', id_usuario=cliente.id_usuario) }}" style="display:inline;">
+                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de que quieres eliminar este cliente?')">
+                                                Eliminar
+                                            </button>
+                                        </form>
+                                        <form method="POST" action="{{ url_for('administrador.editar_permisos', id_usuario=cliente['id_usuario']) }}" style="display:inline;">
+                                            <button type="submit" class="btn btn-success btn-sm">
+                                                Editar Permisos
+                                            </button>
+                                        </form>
+                                        <a href="{{ url_for('administrador.editar_cuenta', id_usuario=cliente.id_usuario) }}" class="btn btn-primary btn-sm">
+                                            Editar Cuenta
+                                        </a>
+                                    </div>
+                                </td>
+                                                       
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3 mt-4">
+        <p>&copy; 2024 Banco Wolf. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    
+</body>
+</html>

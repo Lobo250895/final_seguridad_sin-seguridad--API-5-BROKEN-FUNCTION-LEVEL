@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Datos Personales - banco wolf</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Banco Wolf</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('cliente.dashboard') }}">Inicio</a></li>
+                <li><a href="{{ url_for('cliente.datos_personales') }}">Datos personales</a></li>
+                <li><a href="{{ url_for('cliente.transferencias') }}">Tranferencias</a></li>
+                <li><a href="/auth/logout">Cerrar Sesion</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li>Mi perfil</li>
+                <li>Tranferencias</li>
+                <li>cerrar sesion</li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <h1>Mi perfil</h1>
+            <h2>Datos Personales</h2>
+
+            <div>
+                <p><strong>Nombre:</strong> {{ datos.usuario_nombre }}</p>
+                <p><strong>Email:</strong> {{ datos.usuario_email }}</p>
+                <p><strong>Rol:</strong> {{ datos.rol_nombre }}</p>
+            </div>
+
+            {% if datos.numero_cuenta %}
+                <h2>Información Bancaria</h2>
+                <div>
+                    <p><strong>Número de Cuenta:</strong> {{ datos.numero_cuenta }}</p>
+                    <p><strong>Saldo:</strong> ${{ datos.saldo }}</p>
+                </div>
+            {% else %}
+                <p>No se encontraron cuentas bancarias asociadas.</p>
+            {% endif %}
+
+            <h4>¿Deseas editar datos?</h4>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <div class="alert alert-{{ messages[0][0] }}">{{ messages[0][1] }}</div>
+                {% endif %}
+            {% endwith %}
+
+            <form method="POST" action="{{ url_for('cliente.datos_personales') }}">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" value="{{ datos.usuario_nombre }}" required>
+                <br>
+                
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" value="{{ datos.usuario_email }}" required>
+                <br>
+            
+                <button type="submit">Actualizar</button>
+            </form>
+            
+        </main>
+    </div>
+
+
+    
+</body>
+</html>

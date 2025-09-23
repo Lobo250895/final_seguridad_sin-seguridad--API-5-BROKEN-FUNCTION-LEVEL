@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Banco Wolf</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/auth/index">Inicio</a></li>
+                <li><a href="/auth/login">Iniciar sesión</a></li>
+                <li><a href="/auth/register">Registrarse</a></li>
+                <li><a href="#">Contáctenos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="login-container">
+        
+        <div class="login-box">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <ul class="flashes">
+                        {% for category, message in messages %}
+                            <li class="{{ category }}">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+
+            <h2>Iniciar Sesión</h2>
+            <form action="/auth/login" method="POST">
+                <div class="input-box">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-box">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="submit-btn">
+                    <button type="submit">Iniciar sesión</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>

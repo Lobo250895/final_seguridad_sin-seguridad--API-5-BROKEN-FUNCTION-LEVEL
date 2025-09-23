@@ -1,0 +1,100 @@
+2024-12-07 00:31:06,643 - WARNING -  * Debugger is active!
+2024-12-07 00:31:06,645 - INFO -  * Debugger PIN: 922-473-436
+2024-12-07 00:31:14,758 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-07 00:31:14,759 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-07 00:31:14,759 - INFO -  * Restarting with stat
+2024-12-07 00:31:15,002 - WARNING -  * Debugger is active!
+2024-12-07 00:31:15,003 - INFO -  * Debugger PIN: 922-473-436
+2024-12-07 00:31:40,379 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-07 00:31:40,386 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-07 00:31:40,387 - INFO -  * Restarting with stat
+2024-12-07 00:31:40,625 - WARNING -  * Debugger is active!
+2024-12-07 00:31:40,627 - INFO -  * Debugger PIN: 922-473-436
+2024-12-07 00:33:50,488 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-07 00:33:50,488 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-07 00:33:50,489 - INFO -  * Restarting with stat
+2024-12-07 00:33:50,725 - WARNING -  * Debugger is active!
+2024-12-07 00:33:50,727 - INFO -  * Debugger PIN: 922-473-436
+2024-12-10 18:29:29,462 - WARNING -  * Debugger is active!
+2024-12-10 18:29:29,464 - INFO -  * Debugger PIN: 922-473-436
+2024-12-10 18:29:34,842 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-10 18:29:34,843 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-10 18:29:34,843 - INFO -  * Restarting with stat
+2024-12-10 18:29:35,105 - WARNING -  * Debugger is active!
+2024-12-10 18:29:35,107 - INFO -  * Debugger PIN: 922-473-436
+2024-12-10 18:32:57,664 - INFO - Base de datos inicializada correctamente.
+2024-12-10 18:32:57,682 - WARNING -  * Debugger is active!
+2024-12-10 18:32:57,683 - INFO -  * Debugger PIN: 922-473-436
+2024-12-10 18:33:06,411 - INFO - Base de datos inicializada correctamente.
+2024-12-10 18:33:06,434 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-10 18:33:06,434 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-10 18:33:06,435 - INFO -  * Restarting with stat
+2024-12-10 18:33:06,678 - INFO - Base de datos inicializada correctamente.
+2024-12-10 18:33:06,695 - WARNING -  * Debugger is active!
+2024-12-10 18:33:06,697 - INFO -  * Debugger PIN: 922-473-436
+2024-12-10 18:33:37,425 - INFO - 127.0.0.1 - - [10/Dec/2024 18:33:37] "GET / HTTP/1.1" 200 -
+2024-12-10 18:33:37,449 - INFO - 127.0.0.1 - - [10/Dec/2024 18:33:37] "[36mGET /static/estilos.css HTTP/1.1[0m" 304 -
+2024-12-10 18:33:40,036 - INFO - 127.0.0.1 - - [10/Dec/2024 18:33:40] "GET /auth/login HTTP/1.1" 200 -
+2024-12-10 18:33:40,044 - INFO - 127.0.0.1 - - [10/Dec/2024 18:33:40] "[36mGET /static/estilos.css HTTP/1.1[0m" 304 -
+2024-12-10 18:35:26,147 - INFO - 127.0.0.1 - - [10/Dec/2024 18:35:26] "[31m[1mPOST /auth/login HTTP/1.1[0m" 401 -
+2024-12-10 18:36:18,612 - INFO - 127.0.0.1 - - [10/Dec/2024 18:36:18] "GET / HTTP/1.1" 200 -
+2024-12-10 18:36:18,622 - INFO - 127.0.0.1 - - [10/Dec/2024 18:36:18] "[36mGET /static/estilos.css HTTP/1.1[0m" 304 -
+2024-12-10 18:36:22,039 - INFO - 127.0.0.1 - - [10/Dec/2024 18:36:22] "[33mGET /administrador/dashboard.html HTTP/1.1[0m" 404 -
+2024-12-10 18:36:40,440 - INFO - 127.0.0.1 - - [10/Dec/2024 18:36:40] "GET /auth/login HTTP/1.1" 200 -
+2024-12-10 18:36:40,447 - INFO - 127.0.0.1 - - [10/Dec/2024 18:36:40] "[36mGET /static/estilos.css HTTP/1.1[0m" 304 -
+2024-12-10 18:36:47,501 - INFO - 127.0.0.1 - - [10/Dec/2024 18:36:47] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2024-12-10 18:36:47,509 - INFO - 127.0.0.1 - - [10/Dec/2024 18:36:47] "GET /administrador/dashboard HTTP/1.1" 200 -
+2024-12-10 18:36:47,520 - INFO - 127.0.0.1 - - [10/Dec/2024 18:36:47] "[36mGET /static/lobo.png HTTP/1.1[0m" 304 -
+2024-12-10 18:36:50,858 - INFO - 127.0.0.1 - - [10/Dec/2024 18:36:50] "GET /administrador/clientes HTTP/1.1" 200 -
+2024-12-10 18:36:50,867 - INFO - 127.0.0.1 - - [10/Dec/2024 18:36:50] "[36mGET /static/lobo.png HTTP/1.1[0m" 304 -
+2024-12-10 18:36:55,438 - INFO - 127.0.0.1 - - [10/Dec/2024 18:36:55] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+2024-12-10 18:36:55,441 - INFO - 127.0.0.1 - - [10/Dec/2024 18:36:55] "GET /auth/login HTTP/1.1" 200 -
+2024-12-10 18:36:55,449 - INFO - 127.0.0.1 - - [10/Dec/2024 18:36:55] "[36mGET /static/estilos.css HTTP/1.1[0m" 304 -
+2024-12-10 18:37:05,101 - WARNING - Intento de acceso sin token desde IP: 127.0.0.1
+2024-12-10 18:37:05,101 - INFO - 127.0.0.1 - - [10/Dec/2024 18:37:05] "[31m[1mGET /administrador/clientes HTTP/1.1[0m" 401 -
+2024-12-10 18:37:06,102 - WARNING - Intento de acceso sin token desde IP: 127.0.0.1
+2024-12-10 18:37:06,102 - INFO - 127.0.0.1 - - [10/Dec/2024 18:37:06] "[31m[1mGET /administrador/clientes HTTP/1.1[0m" 401 -
+2024-12-10 18:37:20,987 - INFO - 127.0.0.1 - - [10/Dec/2024 18:37:20] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2024-12-10 18:37:20,996 - INFO - 127.0.0.1 - - [10/Dec/2024 18:37:20] "GET /cliente/dashboard HTTP/1.1" 200 -
+2024-12-10 18:37:21,006 - INFO - 127.0.0.1 - - [10/Dec/2024 18:37:21] "[36mGET /static/estilos_index.css HTTP/1.1[0m" 304 -
+2024-12-10 18:37:21,009 - INFO - 127.0.0.1 - - [10/Dec/2024 18:37:21] "[36mGET /static/lobo.png HTTP/1.1[0m" 304 -
+2024-12-10 18:37:24,693 - WARNING - Intento de acceso no autorizado. Usuario: 1 Rol: 3 desde IP: 127.0.0.1
+2024-12-10 18:37:24,693 - INFO - 127.0.0.1 - - [10/Dec/2024 18:37:24] "[31m[1mGET /administrador/clientes HTTP/1.1[0m" 403 -
+2024-12-10 18:37:26,657 - WARNING - Intento de acceso no autorizado. Usuario: 1 Rol: 3 desde IP: 127.0.0.1
+2024-12-10 18:37:26,658 - INFO - 127.0.0.1 - - [10/Dec/2024 18:37:26] "[31m[1mGET /administrador/clientes HTTP/1.1[0m" 403 -
+2024-12-10 18:37:57,200 - INFO - 127.0.0.1 - - [10/Dec/2024 18:37:57] "[36mGET /static/estilos_index.css HTTP/1.1[0m" 304 -
+2024-12-10 18:37:59,854 - INFO - 127.0.0.1 - - [10/Dec/2024 18:37:59] "GET /cliente/transferencias HTTP/1.1" 200 -
+2024-12-10 18:37:59,867 - INFO - 127.0.0.1 - - [10/Dec/2024 18:37:59] "[36mGET /static/estilos.css HTTP/1.1[0m" 304 -
+2024-12-10 18:38:10,765 - INFO - 127.0.0.1 - - [10/Dec/2024 18:38:10] "GET /cliente/transferencias?generate_token=1 HTTP/1.1" 200 -
+2024-12-10 18:38:10,779 - INFO - 127.0.0.1 - - [10/Dec/2024 18:38:10] "[36mGET /static/estilos.css HTTP/1.1[0m" 304 -
+2024-12-10 18:39:24,873 - INFO - 127.0.0.1 - - [10/Dec/2024 18:39:24] "[32mGET /auth/logout HTTP/1.1[0m" 302 -
+2024-12-10 18:39:24,875 - INFO - 127.0.0.1 - - [10/Dec/2024 18:39:24] "GET /auth/login HTTP/1.1" 200 -
+2024-12-10 18:39:24,891 - INFO - 127.0.0.1 - - [10/Dec/2024 18:39:24] "[36mGET /static/estilos.css HTTP/1.1[0m" 304 -
+2024-12-10 18:40:24,754 - INFO -  * Detected change in 'c:\\Users\\lobom\\Desktop\\final_seguridad_seguro\\run.py', reloading
+2024-12-10 18:40:24,778 - INFO -  * Restarting with stat
+2024-12-10 18:40:25,032 - INFO - Base de datos inicializada correctamente.
+2024-12-10 18:40:25,049 - WARNING -  * Debugger is active!
+2024-12-10 18:40:25,051 - INFO -  * Debugger PIN: 922-473-436
+2024-12-10 18:40:32,017 - INFO - Base de datos inicializada correctamente.
+2024-12-10 18:40:32,040 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-10 18:40:32,040 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-10 18:40:32,041 - INFO -  * Restarting with stat
+2024-12-10 18:40:32,279 - INFO - Base de datos inicializada correctamente.
+2024-12-10 18:40:32,297 - WARNING -  * Debugger is active!
+2024-12-10 18:40:32,299 - INFO -  * Debugger PIN: 922-473-436
+2024-12-10 18:40:45,544 - INFO - 127.0.0.1 - - [10/Dec/2024 18:40:45] "GET / HTTP/1.1" 200 -
+2024-12-10 18:40:45,568 - INFO - 127.0.0.1 - - [10/Dec/2024 18:40:45] "[36mGET /static/estilos.css HTTP/1.1[0m" 304 -
+2024-12-10 18:59:52,062 - INFO - Base de datos inicializada correctamente.
+2024-12-10 18:59:52,085 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-10 18:59:52,085 - INFO - [33mPress CTRL+C to quit[0m
+2024-12-10 18:59:52,086 - INFO -  * Restarting with stat
+2024-12-10 18:59:52,345 - INFO - Base de datos inicializada correctamente.
+2024-12-10 18:59:52,364 - WARNING -  * Debugger is active!
+2024-12-10 18:59:52,365 - INFO -  * Debugger PIN: 922-473-436
